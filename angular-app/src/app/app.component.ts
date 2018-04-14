@@ -17,7 +17,9 @@ export class AppComponent {
     sentenceList = null;
 
     ngOnInit() {
-        this.sentenceList = this.sentenceService.listSentences();
+        this.sentenceList = this.sentenceService.listSentences().subscribe((sentences) => {
+            this.sentenceList = sentences;
+        });
     }
 
 }

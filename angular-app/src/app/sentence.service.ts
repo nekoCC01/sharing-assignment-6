@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class SentenceService {
+    /*
     sentenceList = [
         {
             "kanjis": [
@@ -90,18 +93,32 @@ export class SentenceService {
             "__v": 1
         }
     ];
+    */
 
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
+    private apiUrl = environment.apiUrl;
+
+    /*
     listSentences() {
         return this.sentenceList;
     }
+    */
 
+    listSentences() {
+        return this.http.get(this.apiUrl + 'api/sentences');
+    }
+
+    /*
     getSentence(id) {
         return this.sentenceList.find((el) => {
             return el._id == id;
         })
     }
+    */
 
+    getSentence(id) {
+        return this.http.get(this.apiUrl + 'api/sentences/' + id);
+    }
 }
