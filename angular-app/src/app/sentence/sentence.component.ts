@@ -6,7 +6,7 @@ import {Component, OnInit, Input} from '@angular/core';
     styleUrls: ['./sentence.component.css']
 })
 export class SentenceComponent implements OnInit {
-    @Input() sentences;
+    @Input() sentenceList;
 
     constructor() {
     }
