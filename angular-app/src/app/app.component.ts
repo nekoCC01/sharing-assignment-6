@@ -15,11 +15,20 @@ export class AppComponent {
     }
 
     sentenceList = null;
+    showKanji: boolean = false;
+    filterKanji = null;
 
     handleKanjiFilter(kanji): void {
         console.log("kanji Filter has been pressed" + kanji);
+        this.sentenceList = this.sentenceService.listSentencesByKanji(kanji);
+        this.showKanji = true;
+        this.filterKanji = kanji;
     }
 
+    showAll(): void {
+        this.sentenceList = this.sentenceService.listSentences();
+        this.showKanji = false;
+    }
 
     ngOnInit() {
         this.sentenceList = this.sentenceService.listSentences();

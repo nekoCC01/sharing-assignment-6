@@ -106,12 +106,11 @@ export class SentenceService {
         return this.sentenceList;
     }
 
-    //@todo filter method
-    /*
-    listSentencesByKanji() {
-        return this.sentenceList.filter()
+    listSentencesByKanji(kanji) {
+        return this.sentenceList.filter((el) => {
+            return el.kanjis.includes(kanji);
+        });
     }
-    */
 
     getSentence(id) {
         return this.sentenceList.find((el) => {

@@ -1,4 +1,8 @@
 <div class="container">
+    <div *ngIf="showKanji">
+        <p>additional content about kanji {{filterKanji}}</p>
+        <button (click)="showAll()">Show all</button>
+    </div>
     <app-sentence [sentenceList]="sentenceList" (kanjiFilterEvent)="handleKanjiFilter($event)"></app-sentence>
 </div>
 
