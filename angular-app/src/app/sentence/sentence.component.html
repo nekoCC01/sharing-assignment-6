@@ -9,7 +9,8 @@
         <hr>
         <span class="mr-2">
                         Kanjis:
-                <a href="/" class="btn btn-outline-secondary mr-1" *ngFor="let kanji of sentence.kanjis">{{kanji}}</a>
+                <button (click)="filterByKanji(kanji)" class="btn btn-outline-secondary mr-1"
+                        *ngFor="let kanji of sentence.kanjis">{{kanji}}</button>
                     </span>
     </div>
 </div>

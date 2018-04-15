@@ -16,10 +16,23 @@ export class AppComponent {
 
     sentenceList = null;
 
+    handleKanjiFilter(kanji): void {
+        console.log("kanji Filter has been pressed" + kanji);
+    }
+
+
+    ngOnInit() {
+        this.sentenceList = this.sentenceService.listSentences();
+    }
+
+    /*
+    For later use: get sentenceList via API
+
     ngOnInit() {
         this.sentenceList = this.sentenceService.listSentences().subscribe((sentences) => {
             this.sentenceList = sentences;
         });
     }
+    */
 
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'app-sentence',
@@ -7,6 +7,12 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class SentenceComponent implements OnInit {
     @Input() sentenceList;
+    @Output() kanjiFilterEvent = new EventEmitter<string>();
+
+    filterByKanji(kanji): void {
+        console.log("clicked on button " + kanji);
+        this.kanjiFilterEvent.emit(kanji);
+    }
 
     constructor() {
     }

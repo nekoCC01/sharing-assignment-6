@@ -4,7 +4,7 @@ import {environment} from "../environments/environment";
 
 @Injectable()
 export class SentenceService {
-    /*
+
     sentenceList = [
         {
             "kanjis": [
@@ -93,32 +93,42 @@ export class SentenceService {
             "__v": 1
         }
     ];
-    */
 
+    //for later use with API
     constructor(private http: HttpClient) {
     }
 
+    //for later use with API --> set apiUrl (Express App)
     private apiUrl = environment.apiUrl;
 
-    /*
+
     listSentences() {
         return this.sentenceList;
     }
+
+    //@todo filter method
+    /*
+    listSentencesByKanji() {
+        return this.sentenceList.filter()
+    }
     */
 
-    listSentences() {
-        return this.http.get(this.apiUrl + 'api/sentences');
-    }
-
-    /*
     getSentence(id) {
         return this.sentenceList.find((el) => {
             return el._id == id;
         })
     }
-    */
+
+
+    /*
+    For later use: with API connection
+
+    listSentences() {
+        return this.http.get(this.apiUrl + 'api/sentences');
+    }
 
     getSentence(id) {
         return this.http.get(this.apiUrl + 'api/sentences/' + id);
     }
+    */
 }

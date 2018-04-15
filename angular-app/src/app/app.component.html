@@ -1,7 +1,5 @@
 <div class="container">
-    <app-sentence [sentenceList]="sentenceList"></app-sentence>
-
-
+    <app-sentence [sentenceList]="sentenceList" (kanjiFilterEvent)="handleKanjiFilter($event)"></app-sentence>
 </div>
 
 
