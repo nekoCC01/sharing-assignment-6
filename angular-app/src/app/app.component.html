@@ -2,8 +2,8 @@
     <div class="card bg-dark text-white">
         <img src="/assets/img/bady-qb-312708-unsplash.jpg" alt="header image" class="card-img">
         <div class="card-img-overlay">
-            <h1 class="card-title">Japanese sentences</h1>
-            <p class="card-text">Advanced Japanese</p>
+            <h1 class="card-title">{{title}}</h1>
+            <p class="card-text">{{subtitle}}</p>
         </div>
     </div>
 </div>
@@ -22,10 +22,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
     <app-sentence [sentenceList]="sentenceList" (kanjiFilterEvent)="handleKanjiFilter($event)"></app-sentence>
 </div>

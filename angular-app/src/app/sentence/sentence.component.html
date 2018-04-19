@@ -7,11 +7,12 @@
             {{sentence.english}}
         </p>
         <hr>
-        <span class="mr-2">
-                        Kanjis:
-                <button (click)="filterByKanji(kanji)" class="btn btn-outline-secondary mr-1"
-                        *ngFor="let kanji of sentence.kanjis">{{kanji}}</button>
-                    </span>
+        <span class="mr-2">Kanjis:
+            <button (click)="filterByKanji(kanji)"
+                    class="btn btn-outline-secondary mr-1"
+                    *ngFor="let kanji of sentence.kanjis">{{kanji}}
+            </button>
+        </span>
     </div>
 </div>
 

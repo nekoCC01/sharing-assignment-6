@@ -5,6 +5,7 @@ import {environment} from "../environments/environment";
 @Injectable()
 export class SentenceService {
 
+    //list with all the sentences to be displayed, main data source
     sentenceList = [
         {
             "kanjis": [
@@ -102,22 +103,24 @@ export class SentenceService {
     private apiUrl = environment.apiUrl;
 
 
+    //return all sentences
     listSentences() {
         return this.sentenceList;
     }
 
+    //return sentences, filterebd by kanji
     listSentencesByKanji(kanji) {
         return this.sentenceList.filter((el) => {
             return el.kanjis.includes(kanji);
         });
     }
 
+    //return a specific sentence (by ID) --> for later use in a detail view, etc
     getSentence(id) {
         return this.sentenceList.find((el) => {
             return el._id == id;
         })
     }
-
 
     /*
     For later use: with API connection
