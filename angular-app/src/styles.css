@@ -2,3 +2,7 @@
 .showAll {
     cursor: pointer;
 }
+
+.card-img {
+    width: auto;
+}
